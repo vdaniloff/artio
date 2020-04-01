@@ -697,7 +697,7 @@ public class SequenceNumberIndexWriter implements Index
                 }
 
                 lastKnownDecoder.wrap(inMemoryBuffer, position, RECORD_SIZE, SCHEMA_VERSION);
-                if (lastKnownDecoder.sequenceNumber() == 0 && newSequenceNumber != 0)
+                if (lastKnownDecoder.sessionId() == 0)
                 {
                     // Don't redact if there's nothing to redact
                     if (requiredPosition == NO_REQUIRED_POSITION)
